@@ -17,8 +17,8 @@ const { port, dbUri, sessionSecret } = require('./config/environment');
 mongoose.Promise = require('bluebird');
 mongoose.connect(dbUri, { useMongoClient: true });
 
-app.set('view engine', 'ejs');
 app.set('views', `${__dirname}/views`);
+app.set('view engine', 'ejs');
 
 app.use(expressLayouts);
 app.use(express.static(`${__dirname}/public`));

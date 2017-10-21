@@ -21,7 +21,6 @@ function authentication(req, res, next) {
   //     next();
   //   });
 
-  next();
 }
 
 module.exports = authentication;
