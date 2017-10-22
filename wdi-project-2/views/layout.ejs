@@ -12,25 +12,13 @@
   <script src="/js/client.js" charset="utf-8"></script>
 </head>
 <body>
-    <% if (locals.message){ %>
-      <% locals.message %>
+  <% if (locals.message){ %>
+    <% locals.message %>
     <% } %>
-    <%- body %>
-  <header>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light justify-content-between">
-      <a class="navbar-brand" href="/">ObsCouture</a>
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" href="/signup">Sign Up</a>
-        <a class="nav-item nav-link" href="/login">Log In</a>
-      </div>
-    </nav>
-  </header>
-  <footer class="footer">
-    <nav class="navbar fixed-bottom navbar-light bg-light justify-content-center">
-      <span class="navbar-text">
-        Navbar text with an inline element
-      </span>
-    </nav>
-  </footer>
-</body>
-</html>
+    <%- include ./partials/_header %>
+    <main>
+      <%- body %>
+    </main>
+    <%- include ./partials/_footer %>
+  </body>
+  </html>

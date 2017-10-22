@@ -6,19 +6,29 @@ function newRoute(req,res) {
 
 function createRoute(req,res) {
   User
-    .find()
-    .exec()
-    .then(() => {
-      res.render('userprofile');
-    })
-    .catch(err => {
-      res.status(500).end(err);
+    .findOne({ email: req.body.email })
+    .then((user) => {
+      if(!user || !user.validatePassword(req.body.password)) {
+        req.flash('danger', 'Unknown email/password combination');
+        res.status(401).render('session/login', { message: 'Unrecognised credentials' });
+      }
+      req.session.userId = user.id;
+      req.flash('success', `${user.username}, you've logged in!`);
+
+      return res.redirect('/homepages');
     });
 }
 
+function deleteRoute(req, res) {
+  return req.session.regenerate(() => {
+    req.flash('success', 'You successfully logged out.');
+    res.redirect('/');
+  });
 
+}
 
 module.exports = {
   new: newRoute,
-  create: createRoute
+  create: createRoute,
+  delete: deleteRoute
 };

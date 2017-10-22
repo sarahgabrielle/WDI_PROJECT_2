@@ -13,31 +13,42 @@ User.collection.drop();
 Category.collection.drop();
 Brand.collection.drop();
 // Create the models
-User
+// User
+//   .create([{
+//     username: 'sarahg',
+//     email: 'sarah@sarah.com',
+//     password: 'password'
+//   },{
+//     username: 'daniel',
+//     email: 'daniel@daniel.com',
+//     password: 'password'
+//   }])
+//   .then((users) => {
+//     console.log(`${users.length} users created`);
+
+// return
+Category
   .create([{
-    username: 'sarahg',
-    email: 'sarah@sarah.com',
-    password: 'password'
+    image: 'https://static.pexels.com/photos/157887/sunglasses-white-dress-fashion-model-157887.jpeg',
+    name: 'Chic'
+    // brands: [BrandSchema]
   },{
-    username: 'daniel',
-    email: 'daniel@daniel.com',
-    password: 'password'
+    image: 'https://static.pexels.com/photos/276064/pexels-photo-276064.jpeg',
+    name: 'Vintage'
+    // brands: [BrandSchema]
+  },{
+    image: 'https://static.pexels.com/photos/206470/pexels-photo-206470.jpeg',
+    name: 'Ethical'
+    // brands: [BrandSchema]
   }])
-  .then((users) => {
-    console.log(`${users.length} users created`);
+  .then((categories) => {
+    console.log(`${categories.length} categories created`);
 
-    return Category
+    return Brand
       .create([{
-        name: 'Chic'
-      }])
-      .then((categories) => {
-        console.log(`${categories.length} categories created`);
-
-        return Brand
-          .create([{
-            name: 'Maje'
-          }]);
-      });
+        name: 'Maje'
+      }]);
+    // });
   })
   .then((brands) => {
     console.log(`${brands.length} brands created`);

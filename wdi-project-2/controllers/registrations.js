@@ -7,10 +7,16 @@ function newRoute(req,res) {
 function createRoute(req, res) {
   User
     .create(req.body)
-    .then(() => {
-      res.redirect('/');
+    .then((user) => {
+      req.flash('info', `Thanks for registering, ${user.username}! Please log in!`);
+      res.redirect('/login');
     })
-    .catch((err) => res.status(500).end(err));
+    .catch((err) => {
+      if (err.name === 'ValidationError') {
+        return res.status(400).render('registration/signup', { message: 'Passwords do not match' });
+      }
+      res.status(500).end();
+    });
 }
 
 module.exports = {
