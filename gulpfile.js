@@ -41,7 +41,7 @@ gulp.task('images', () => {
 
 gulp.task('serve', ['js', 'sass'], () => {
   browserSync.init({
-    proxy: 'http://localhost:4000',
+    proxy: 'http://localhost:3000',
     port: 8000,
     files: ['public/**/*.*'],
     reloadDelay: 500

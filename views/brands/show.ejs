@@ -1,0 +1,11 @@
+<h1>Show</h1>
+<h3><%= brand.name %></h3>
+<h3>
+  <a href="/brands/">
+  <img class="img-thumbnail" src="<%= brand.mainimage %>"
+  alt="<%= brand.name %>" height="200px" width="200px"></a>
+</h3>
+
+<% brand.images.forEach((image) => { %>
+  <img class="img-thumbnail" src="<%= image.url %>">
+<% }) %>

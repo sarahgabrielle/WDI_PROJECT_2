@@ -1,0 +1,18 @@
+<section>
+  <h1>Brands</h1>
+  <p><%= category.name %></p>
+  <ul>
+    <% category.brands.forEach((brand) => { %>
+      <div class="large-4 columns">
+        <li>
+          <a href="/brands/<%= brand.id %>">
+          <img class="img-thumbnail" src="<%= brand.mainimage %>"
+          alt="<%= brand.name %>" height="200px" width="200px">
+          <p><%= brand.name %></p></a>
+        </li>
+      </div>
+      <% }); %>
+    </ul>
+
+    <a href="/categories/<%= category._id %>/brands/new">ADD A NEW BRAND!</a>
+  </section>

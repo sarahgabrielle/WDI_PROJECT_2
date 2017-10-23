@@ -1,12 +1,11 @@
-<main>
-<h1>Index</h1>
-<h2>Browse</h2>
+<section>
+<h1>Browse</h1>
 
 <ul>
 <% categories.forEach((category) => { %>
   <div class="large-4 columns">
   <li>
-  <a href="/homepages/<%= category.id %>">
+  <a href="/categories/<%= category.id %>">
   <img class="img-thumbnail" src="<%= category.image %>"
   alt="<%= category.name %>" height="200px" width="200px">
   <p><%= category.name %></p></a>
@@ -15,4 +14,4 @@
   <% }); %>
 
 </ul>
-</main>
+</section>

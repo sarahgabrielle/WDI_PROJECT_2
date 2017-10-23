@@ -1,0 +1,16 @@
+<section>
+  <h1>New</h1>
+  <form method="POST" action="/categories/<%= category._id%>">
+    <div>
+      <label for="name">Brand Name</label>
+      <input type="text" name="name" id="name">
+    </div>
+
+    <div>
+      <label for="mainimage">Main Image</label>
+      <input type="text" name="mainimage" id="mainimage">
+    </div>
+
+    <input type="submit" value="Create">
+  </form>
+</section>

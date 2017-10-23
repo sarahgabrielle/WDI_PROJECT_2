@@ -15,10 +15,17 @@
   <% if (locals.message){ %>
     <% locals.message %>
     <% } %>
-    <%- include ./partials/_header %>
-    <main>
-      <%- body %>
-    </main>
-    <%- include ./partials/_footer %>
-  </body>
-  </html>
+    <header>
+      <%- include ./partials/_header %>
+    </header>
+    <main class="container">
+      <% for (const type in messages) { %>
+        <p class="alert alert-<%= type %>"><%= messages[type] %></p>
+        <% } %>
+        <%- body %>
+      </main>
+      <footer>
+        <%- include ./partials/_footer %>
+      </footer>
+    </body>
+    </html>
