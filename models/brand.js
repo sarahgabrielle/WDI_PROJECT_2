@@ -7,6 +7,7 @@ const imageSchema = new mongoose.Schema({
 const brandSchema = new mongoose.Schema({
   name: String,
   mainimage: String,
+  categId: String,
   images: [imageSchema]
 }, {
   timestamps: true

@@ -1,28 +1,28 @@
-<% if (locals.message) { %>
-  <p><%= message %></p>
-<% } %>
-  <div class="container" id="signup">
+
+<div class="col-sm-8 col-md-6 col-lg-4">%>
+  <form method="POST" action="/register" class="form-vertical">
     <div class="row">
-      <div class="col-sm-8 col-md-6 col-lg-4">
-        <form method="POST" action="/register">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="passwordConfirmation">Confirm Password</label>
-            <input type="password" name="passwordConfirmation" id="passwordConfirmation" class="form-control">
-          </div>
-          <button class="btn btn-secondary">Sign Up</button>
-        </form>
-      </div>
+      <label class="col-form-label" for="username">Username</label>
+      <input type="text" name="username" id="username" class="form-control">
     </div>
-  </div>
+
+    <div class="row">
+      <label class="col-form-label" for="email">Email</label>
+      <input type="text" name="email" id="email" class="form-control">
+    </div>
+
+    <div class="row">
+      <label class="col-form-label" for="password">Password</label>
+      <input type="password" name="password" id="password" class="form-control">
+    </div>
+
+    <div class="row">
+      <label class="col-form-label" for="passwordConfirmation">Confirm Password</label>
+      <input type="password" name="passwordConfirmation" id="passwordConfirmation" class="form-control">
+    </div>
+
+    <div class="row">
+      <button class="btn btn-secondary">Sign Up</button>
+    </div>
+  </form>
+</div>

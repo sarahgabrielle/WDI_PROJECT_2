@@ -1,17 +1,13 @@
 <section>
-<h1>Browse</h1>
-
-<ul>
-<% categories.forEach((category) => { %>
-  <div class="large-4 columns">
-  <li>
-  <a href="/categories/<%= category.id %>">
-  <img class="img-thumbnail" src="<%= category.image %>"
-  alt="<%= category.name %>" height="200px" width="200px">
-  <p><%= category.name %></p></a>
-  </li>
-  </div>
-  <% }); %>
-
-</ul>
+  <h1 class="categoriesIndex">Browse</h1>
+  <ul>
+    <% categories.forEach((category) => { %>
+      <li>
+      <a class="categoryname" href="/categories/<%= category.id %>">
+      <img class="img-thumbnail" src="<%= category.image %>"
+      alt="<%= category.name %>">
+      <h1 class="categoryname"><%= category.name %></h1></a>
+      </li>
+      <% }); %>
+    </ul>
 </section>

@@ -1,11 +1,23 @@
 <h1>Show</h1>
-<h3><%= brand.name %></h3>
+<h1><%= brand.name %></h1>
 <h3>
-  <a href="/brands/">
   <img class="img-thumbnail" src="<%= brand.mainimage %>"
-  alt="<%= brand.name %>" height="200px" width="200px"></a>
+  alt="<%= brand.name %>" height="200px" width="200px">
 </h3>
 
 <% brand.images.forEach((image) => { %>
   <img class="img-thumbnail" src="<%= image.url %>">
 <% }) %>
+
+<form action="/brands/<%= brand._id %>/edit">
+    <input type="submit" value="Edit"/>
+</form>
+
+<form action="/brands/<%= brand._id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE"/>
+  <button>Delete</button>
+</form>
+
+<form action="/categories/<%= brand.categId %>">
+  <input type="submit" value="Go Back">
+</form>

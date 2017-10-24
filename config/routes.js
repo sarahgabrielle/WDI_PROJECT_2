@@ -4,6 +4,7 @@ const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const categories = require('../controllers/categories');
 const brands = require('../controllers/brands');
+const secureRoute = require('../lib/secureRoute');
 
 // An index route
 router.get('/', (req, res) => res.render('index'));
@@ -27,19 +28,26 @@ router.route('/logout')
 
 // INDEX for categories
 router.route('/categories')
-  .get(categories.index);
+  .get(secureRoute, categories.index);
 
 //Create a new brand
 router.route('/categories/:id/brands/new')
-  .get(brands.new);
+  .get(secureRoute, brands.new);
 
 // SHOW for categories
 router.route('/categories/:id')
-  .get(categories.show)
-  .post(brands.create);
+  .get(secureRoute, categories.show)
+  .post(secureRoute, brands.create);
 
 // SHOW for brands
+router.route('/brands/:id/edit')
+  .get(secureRoute, brands.edit);
+
+
 router.route('/brands/:id')
-  .get(brands.show)
+  .get(secureRoute, brands.show)
+  .put(secureRoute, brands.update)
+  .delete(secureRoute, brands.delete);
+
 
 module.exports = router;

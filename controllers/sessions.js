@@ -2,7 +2,6 @@ const User = require('../models/user');
 
 function newRoute(req,res) {
   res.render('session/login');
-  console.log('first');
 }
 
 function createRoute(req,res,next) {
@@ -17,7 +16,6 @@ function createRoute(req,res,next) {
       req.user = user;
       req.session.isAuthenticated = true;
       req.flash('success', `${user.username}, you've logged in!`);
-      console.log('third');
 
       return res.redirect('/categories');
     })
