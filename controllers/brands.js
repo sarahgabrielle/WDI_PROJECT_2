@@ -33,6 +33,7 @@ function createRoute(req,res){
 function showRoute(req, res) {
   Brand
     .findById(req.params.id)
+    .populate('category')
     .exec()
     .then((brand) => {
       if(!brand) return res.status(404).end('Not Found');
@@ -94,11 +95,28 @@ function deleteRoute(req, res, next) {
     .catch(next);
 }
 
+// This requires the user's favorites to be populated (see `lib/userAuth.js`)
+function brandsFavorite(req, res) {
+  // if the selected brand is not in the user's favorites
+  if(!req.user.favorites.find(brand => brand.id === req.params.id)) {
+    // add the brand id to the user's favorites
+    req.user.favorites.push(req.params.id);
+  } else {
+    // remove the brand from the user's favorites
+    req.user.favorites = req.user.favorites.filter(brand => brand.id !== req.params.id);
+  }
+
+  // save the user
+  req.user.save()
+    .then(() => res.redirect('back'));
+}
+
 module.exports = {
   new: newRoute,
   create: createRoute,
   show: showRoute,
   edit: editRoute,
   update: updateRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  favorite: brandsFavorite
 };

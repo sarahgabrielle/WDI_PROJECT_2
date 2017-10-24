@@ -28,14 +28,23 @@ User
 
     return Category
       .create([{
-        image: 'https://static.pexels.com/photos/157887/sunglasses-white-dress-fashion-model-157887.jpeg',
+        image: 'https://170213-images.liketoknow.it/d611a692-b883-11e7-9fed-0242ac110002?fm=jpeg&auto=format&w=405&h=405&fit=crop&dpr=2',
         name: 'Chic'
       }, {
-        image: 'http://metrouk2.files.wordpress.com/2014/02/test125430.jpg',
-        name: 'Vintage'
+        image: 'https://170213-images.liketoknow.it/f0a3f236-b5cf-11e7-9fed-0242ac110002?fm=jpeg&auto=format&w=405&h=405&fit=crop&dpr=2',
+        name: 'Hipster'
       }, {
-        image: 'http://www.theecoedit.co.uk/wp-content/uploads/2016/06/acejig-featured1.jpg',
-        name: 'Ethical'
+        image: 'https://170213-images.liketoknow.it/e9ca73c0-b878-11e7-9fed-0242ac110002?fm=jpeg&auto=format&w=405&h=405&fit=crop&dpr=2',
+        name: 'Bohemian'
+      }, {
+        image: 'https://170213-images.liketoknow.it/01f6665c-b815-11e7-9fed-0242ac110002?fm=jpeg&auto=format&w=405&h=405&fit=crop&dpr=2',
+        name: 'Artsy'
+      }, {
+        image: 'https://170213-images.liketoknow.it/aca17452-47a0-11e7-9fed-0242ac110002?fm=jpeg&auto=format&w=405&h=405&fit=crop&dpr=2',
+        name: 'Urban'
+      }, {
+        image: 'https://170213-images.liketoknow.it/2755eb86-b885-11e7-9fed-0242ac110002?fm=jpeg&auto=format&w=405&h=405&fit=crop&dpr=2',
+        name: 'Trendy'
       }]);
   })
   .then(categories => {
@@ -44,7 +53,7 @@ User
     return new Promise((resolve, reject) => {
       let categoryToUpdate;
       Category
-        .findOne({ name: 'Chic' })
+        .findOne({ name: 'CHIC' })
         .exec()
         .then(category => {
 
@@ -52,11 +61,9 @@ User
 
           return Brand
             .create([{
-              name: 'Maje',
+              name: 'MAJE',
               mainimage: 'https://pbs.twimg.com/profile_images/905733519531544577/QL-9eREG_400x400.jpg',
               images: [{
-                url: 'https://uk.maje.com/dw/image/v2/AAON_PRD/on/demandware.static/-/Sites-maje-catalog-master-H13/default/dw4e3ee8cd/images/h13/Maje_E17ROYAN-0313_H_1.jpg?sw=500&sh=500&sm=fit'
-              }, {
                 url: 'https://us.maje.com/dw/image/v2/AAON_PRD/on/demandware.static/-/Sites-maje-catalog-master-H13/default/dwf6262f2c/images/h13/Maje_E17PANDORA-0071_H_4.jpg?sw=750&sh=750&sm=fit'
               }, {
                 url: 'https://us.maje.com/dw/image/v2/AAON_PRD/on/demandware.static/-/Sites-maje-catalog-master-H13/default/dwd63e9656/images/h13/Maje_E17RIMIA-02_H_1.jpg?sw=500&sh=500&sm=fit'
@@ -64,7 +71,7 @@ User
                 url: 'https://uk.maje.com/dw/image/v2/AAON_PRD/on/demandware.static/-/Sites-maje-catalog-master-H13/default/dw00fc1a71/images/h13/Maje_E17RIAM-0101_H_1.jpg?sw=700&sh=700&sm=fit'
               }]
             }, {
-              name: 'Sandro',
+              name: 'SANDRO',
               mainimage: 'https://pbs.twimg.com/profile_images/447450936831508480/pii5zAUU_400x400.jpeg',
               images: [{
                 url: 'https://uk.sandro-paris.com/on/demandware.static/-/Sites-sandro-catalog-master-H13/default/dwab8bcb99/images/h13/Sandro_R1362H-20_V_1.jpg'

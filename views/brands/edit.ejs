@@ -1,17 +1,18 @@
-<section>
-  <h1>Edit</h1>
-  <form method="POST" action="/brands/<%= brand._id%>">
-    <input type="hidden" name="_method" value="PUT">
-    <div>
-      <label for="name">Brand Name</label>
-      <input type="text" name="name" id="name" value="<%= brand.name %>">
+<div class="container" id="editbrand">
+  <div class="row">
+    <div class="col-md-4 offset-md-4 border border-secondary">
+      <p><strong>EDIT BRAND</strong></p>
+      <form method="POST" action="/brands/<%= brand._id%>">
+        <div class="form-group">
+          <label for="name">Brand Name</label>
+          <input type="text" name="name" id="name" value="<%= brand.name %>" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="mainimage">Main Image</label>
+          <input type="text" name="mainimage" id="mainimage" value="<%= brand.mainimage %>" class="form-control">
+        </div>
+        <button class="btn btn-secondary">Edit</button>
+      </form>
     </div>
-
-    <div>
-      <label for="mainimage">Main Image</label>
-      <input type="text" name="mainimage" id="mainimage" value="<%= brand.mainimage %>">
-    </div>
-
-    <input type="submit" value="Edit">
-  </form>
-</section>
+  </div>
+</div>

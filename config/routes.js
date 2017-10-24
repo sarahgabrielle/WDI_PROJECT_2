@@ -10,7 +10,7 @@ const secureRoute = require('../lib/secureRoute');
 router.get('/', (req, res) => res.render('index'));
 
 //User Profile page where you can see all of your "saved brands along with your username etc"
-router.get('/userprofile', (req, res) => res.render('userprofile'));
+router.get('/likes', (req, res) => res.render('likes'));
 
 // Sign up page
 router.route('/register')
@@ -38,6 +38,9 @@ router.route('/categories/:id/brands/new')
 router.route('/categories/:id')
   .get(secureRoute, categories.show)
   .post(secureRoute, brands.create);
+
+router.route('/brands/:id/favorite')
+  .post(secureRoute, brands.favorite);
 
 // SHOW for brands
 router.route('/brands/:id/edit')

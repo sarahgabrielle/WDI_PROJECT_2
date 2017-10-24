@@ -1,18 +1,20 @@
 <section>
-  <h1>Brands</h1>
-  <h1><%= category.name %></h1>
-  <ul>
+  <div class="container">
+    <h1><%= category.name %></h1>
+    <div class="row">
     <% category.brands.forEach((brand) => { %>
-      <li>
+      <div class="col-sm-12 col-md-6 col-lg-3 text-center">
       <a href="/brands/<%= brand.id %>">
-      <img class="img-thumbnail" src="<%= brand.mainimage %>"
-      alt="<%= brand.name %>" height="200px" width="200px">
-      <p><%= brand.name %></p></a>
-      </li>
+      <h5><%= brand.name %></h5>
+      <img class="img-thumbnail img-fluid" src="<%= brand.mainimage %>"
+      alt="<%= brand.name %>">
+      </a>
+      </div>
       <% }); %>
-    </ul>
-
-    <form action="/categories/<%= category._id %>/brands/new">
-      <input type="submit" value="Add Brand">
-    </form>
-  </section>
+    </div>
+    <div class="d-flex justify-content-center">
+        <a class="btn btn-secondary" href="/categories/<%= category._id %>/brands/new" role="button">Add Brand</a>
+        <a class="btn btn-secondary" href="/categories/" role="button">Go Back</a>
+      </div>
+</div>
+</section>

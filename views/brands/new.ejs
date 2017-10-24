@@ -1,16 +1,18 @@
-<section>
-  <h1>New</h1>
-  <form method="POST" action="/categories/<%= category._id%>">
-    <div>
-      <label for="name">Brand Name</label>
-      <input type="text" name="name" id="name" placeholder="Input Brand name">
+<div class="container" id="newbrand">
+  <div class="row">
+    <div class="col-md-4 offset-md-4 border border-secondary">
+      <p><strong>ADD BRAND</strong></p>
+      <form method="POST" action="/categories/<%= category._id%>">
+        <div class="form-group">
+          <label for="name">Brand Name</label>
+          <input type="text" name="name" id="name" placeholder="Brand name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="mainimage">Main Image</label>
+          <input type="text" name="mainimage" id="mainimage" placeholder="Image" class="form-control">
+        </div>
+        <button class="btn btn-secondary">Create</button>
+      </form>
     </div>
-
-    <div>
-      <label for="mainimage">Main Image</label>
-      <input type="text" name="mainimage" id="mainimage" placeholder="Input url">
-    </div>
-
-    <input type="submit" value="Create">
-  </form>
-</section>
+  </div>
+</div>

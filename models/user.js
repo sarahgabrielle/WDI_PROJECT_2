@@ -4,7 +4,8 @@ const bcrypt = require('bcrypt');
 const UserSchema = new mongoose.Schema({
   username: String,
   email: {type: String, required: true, unique: true},
-  password: {type: String, required: true}
+  password: {type: String, required: true},
+  favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Brand' }]
 });
 
 UserSchema.pre('save', function hashPassword(next) {
@@ -27,6 +28,11 @@ UserSchema.pre('validate', function checkPassword(next) {
 
 UserSchema.methods.validatePassword = function validatePassword(password) {
   return bcrypt.compareSync(password, this.password);
+};
+
+UserSchema.methods.hasFavorited = function hasFavorited(brand) {
+  if(!brand) return false;
+  return !!this.favorites.find(_brand => brand.id === _brand.id);
 };
 
 module.exports = mongoose.model('User', UserSchema);

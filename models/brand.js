@@ -5,12 +5,19 @@ const imageSchema = new mongoose.Schema({
 });
 
 const brandSchema = new mongoose.Schema({
-  name: String,
+  name: { type: String, uppercase: true },
   mainimage: String,
   categId: String,
   images: [imageSchema]
 }, {
   timestamps: true
+});
+
+brandSchema.virtual('category', {
+  ref: 'Category',
+  localField: '_id',
+  foreignField: 'brands',
+  justOne: true
 });
 
 module.exports = mongoose.model('Brand', brandSchema);
