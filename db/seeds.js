@@ -12,7 +12,7 @@ const Brand = require('../models/brand');
 // Drop the model
 User.collection.drop();
 Category.collection.drop();
-Brand.collection.drop();
+// Brand.collection.drop();
 // Create the models
 
 
@@ -53,7 +53,7 @@ User
     return new Promise((resolve, reject) => {
       let categoryToUpdate;
       Category
-        .findOne({ name: 'CHIC' })
+        .findOne({ name: 'HIPSTER' })
         .exec()
         .then(category => {
 
@@ -61,24 +61,24 @@ User
 
           return Brand
             .create([{
-              name: 'MAJE',
-              mainimage: 'https://pbs.twimg.com/profile_images/905733519531544577/QL-9eREG_400x400.jpg',
+              name: 'WATER',
+              mainimage: 'https://scontent-atl3-1.cdninstagram.com/t51.2885-15/s640x640/e35/19379256_1791950654155596_2512029575752450048_n.jpg',
               images: [{
-                url: 'https://us.maje.com/dw/image/v2/AAON_PRD/on/demandware.static/-/Sites-maje-catalog-master-H13/default/dwf6262f2c/images/h13/Maje_E17PANDORA-0071_H_4.jpg?sw=750&sh=750&sm=fit'
+                url: 'https://cdn.shopify.com/s/files/1/1053/9082/products/SHOT_13_1566_grande.jpg?v=1483665081'
               }, {
-                url: 'https://us.maje.com/dw/image/v2/AAON_PRD/on/demandware.static/-/Sites-maje-catalog-master-H13/default/dwd63e9656/images/h13/Maje_E17RIMIA-02_H_1.jpg?sw=500&sh=500&sm=fit'
+                url: 'https://cdn.shopify.com/s/files/1/1053/9082/products/SHOT_18_1869_d1047012-114f-4b79-8856-682e2f48c7b4_grande.jpg?v=1483660236'
               }, {
-                url: 'https://uk.maje.com/dw/image/v2/AAON_PRD/on/demandware.static/-/Sites-maje-catalog-master-H13/default/dw00fc1a71/images/h13/Maje_E17RIAM-0101_H_1.jpg?sw=700&sh=700&sm=fit'
+                url: 'https://cdn.shopify.com/s/files/1/1053/9082/products/SHOT_11_1392_556313b1-1804-4e9f-9c9c-9774d47c1f1e_grande.jpg?v=1483660864'
               }]
             }, {
-              name: 'SANDRO',
-              mainimage: 'https://pbs.twimg.com/profile_images/447450936831508480/pii5zAUU_400x400.jpeg',
+              name: 'LAURS KEMP',
+              mainimage: 'http://cdn.shopify.com/s/files/1/0831/6977/products/LAURS-KEMP--Crop-Boob-Tee2_grande.jpg?v=1466226573',
               images: [{
-                url: 'https://uk.sandro-paris.com/on/demandware.static/-/Sites-sandro-catalog-master-H13/default/dwab8bcb99/images/h13/Sandro_R1362H-20_V_1.jpg'
+                url: 'https://static1.squarespace.com/static/57a3ed5e414fb54f51f72109/57a3f9515016e144770437c5/58a5435dbe6594753033107d/1506668079076/arlo7.jpg?format=1000w'
               }, {
-                url: 'http://uk.sandro-paris.com/on/demandware.static/-/Sites-sandro-catalog-master-H13/default/dw583d30c6/images/h13/Sandro_V6966H-MULT_V_1.jpg'
+                url: 'https://static1.squarespace.com/static/57a3ed5e414fb54f51f72109/57a3f9515016e144770437c5/5802a2429f74569f6bce8bdb/1487282764500/Paloma+Jeans+4.JPG?format=1500w'
               }, {
-                url: 'https://uk.sandro-paris.com/on/demandware.static/-/Sites-sandro-catalog-master-H13/default/dwa8cfa8dc/images/h13/Sandro_M9303H-20_V_1.jpg'
+                url: 'https://static1.squarespace.com/static/57a3ed5e414fb54f51f72109/57a3f9515016e144770437c5/58ca0f5786e6c081effc13ba/1489637224560/josie+clem+cover.jpg?format=1000w'
               }]
             }]);
         })

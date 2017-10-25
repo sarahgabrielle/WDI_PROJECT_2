@@ -3,6 +3,7 @@
     <div class="col-md-4 offset-md-4 border border-secondary">
       <p><strong>EDIT BRAND</strong></p>
       <form method="POST" action="/brands/<%= brand._id%>">
+        <input type="hidden" name="_method" value="PUT">
         <div class="form-group">
           <label for="name">Brand Name</label>
           <input type="text" name="name" id="name" value="<%= brand.name %>" class="form-control">
@@ -12,6 +13,7 @@
           <input type="text" name="mainimage" id="mainimage" value="<%= brand.mainimage %>" class="form-control">
         </div>
         <button class="btn btn-secondary">Edit</button>
+        <a class="btn btn-secondary" href="/brands/<%= brand._id%>" role="button">Cancel</a>
       </form>
     </div>
   </div>

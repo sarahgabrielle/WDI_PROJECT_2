@@ -43,14 +43,14 @@ router.route('/brands/:id/favorite')
   .post(secureRoute, brands.favorite);
 
 // SHOW for brands
-router.route('/brands/:id/edit')
-  .get(secureRoute, brands.edit);
-
-
 router.route('/brands/:id')
   .get(secureRoute, brands.show)
   .put(secureRoute, brands.update)
   .delete(secureRoute, brands.delete);
+
+router.route('/brands/:id/edit')
+  .get(secureRoute, brands.edit);
+
 
 
 module.exports = router;

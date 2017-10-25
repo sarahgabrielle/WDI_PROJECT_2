@@ -7,8 +7,18 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.navbar-brand {
+  font-family: 'Arapey', serif;
+  font-size: 40px;
+  letter-spacing: -1px;
+}
 .content {
   flex: 1 0 auto;
+}
+
+.navbar {
+  height: 10vh;
 }
 
 //Log in form
@@ -25,6 +35,10 @@ body {
   margin-top: 100px;
 }
 
+#editbrand {
+  margin-top: 100px;
+}
+
 a {
   color: black;
   text-decoration: none;
@@ -35,26 +49,13 @@ a:hover {
   text-decoration: none;
 }
 
-#signup {
-  border: 1px solid green;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-h1 {
-  margin-top: 0.5rem;
-  text-align: center;
-}
-
-h5{
+h1, h5 {
   margin-top: 0.5rem;
   text-align: center;
 }
 
 img {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .btn-secondary {
@@ -79,8 +80,25 @@ button:hover {
 }
 
 .img-fluid {
-  max-height: 200px;
-  min-width: 200px;
+  height: 200px;
+  width: 200px;
+}
+
+.img-fluid:hover {
+  border-color: #CC004A;
+  border-width: medium;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #CC004A;
+}
+
+.indeximage {
+  background-image: url(/images/indexPhoto.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 95vh;
 }
 
 .button-column {
