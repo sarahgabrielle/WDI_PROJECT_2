@@ -51,6 +51,4 @@ router.route('/brands/:id')
 router.route('/brands/:id/edit')
   .get(secureRoute, brands.edit);
 
-
-
 module.exports = router;

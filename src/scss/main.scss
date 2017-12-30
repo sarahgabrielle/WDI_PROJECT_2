@@ -56,6 +56,10 @@ h1, h5 {
 
 img {
   margin-bottom: 1.5rem;
+  padding: .25rem;
+  background-color: #fff;
+  transition: all .2s ease-in-out;
+  max-width: 100%;
 }
 
 .btn-secondary {

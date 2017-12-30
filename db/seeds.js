@@ -13,9 +13,8 @@ const Brand = require('../models/brand');
 User.collection.drop();
 Category.collection.drop();
 // Brand.collection.drop();
+
 // Create the models
-
-
 User
   .create([{
     username: 'sarahg',
@@ -53,6 +52,46 @@ User
     return new Promise((resolve, reject) => {
       let categoryToUpdate;
       Category
+        .findOne({ name: 'CHIC' })
+        .exec()
+        .then(category => {
+
+          categoryToUpdate = category;
+
+          return Brand
+            .create([{
+              name: 'HAUS VON M',
+              mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/302703/avatar/haus_von_m_notjustalabel_2136249604.jpg',
+              images: [{
+                url: 'https://www.notjustalabel.com/sites/default/files/styles/42_x_72_scale_and_crop/public/images/collections/302709/christianconti_hausvonm4407.jpg?itok=SbYFPuRd'
+              }, {
+                url: 'https://www.notjustalabel.com/sites/default/files/styles/42_x_72_scale_and_crop/public/images/collections/302709/christianconti_hausvonm4502.jpg?itok=A4YcSrgK'
+              }, {
+                url: 'https://www.notjustalabel.com/sites/default/files/styles/42_x_72_scale_and_crop/public/images/collections/302709/christianconti_hausvonm5111.jpg?itok=uZJsW1PO'
+              }]
+            }, {
+              name: 'MAISON NABOODA',
+              mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/301939/avatar/maison_nabooda_notjustalabel_9650789.jpg',
+              images: [{
+                url: 'https://www.notjustalabel.com/sites/default/files/styles/42_x_72_scale_and_crop/public/shaima-394f.jpg?itok=hXS8o0lq'
+              }, {
+                url: 'https://www.notjustalabel.com/sites/default/files/styles/42_x_72_scale_and_crop/public/images/collections/301969/shaima-030f.jpg?itok=Tryjhzz0'
+              }, {
+                url: 'https://www.notjustalabel.com/sites/default/files/styles/42_x_72_scale_and_crop/public/images/collections/301969/shaima-117f-revised.jpg?itok=rExr6Vwi'
+              }]
+            }, {
+              name: 'JESSICA SAMBUDIONO',
+              mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/300355/avatar/jessica_sambudiono_notjustalabel_501674439.jpg',
+              images: [{
+                url: 'https://www.notjustalabel.com/sites/default/files/styles/42_x_72_scale_and_crop/public/images/collections/300357/img_02251.jpg?itok=x7Q3KADj'
+              }, {
+                url: 'https://www.notjustalabel.com/sites/default/files/styles/42_x_72_scale_and_crop/public/images/collections/300357/ad.jpg?itok=rxV4Zdg8'
+              }, {
+                url: 'https://www.notjustalabel.com/sites/default/files/styles/42_x_72_scale_and_crop/public/images/collections/300357/d.jpg?itok=x-Pkqvlt'
+              }]
+            }]);
+        });
+      Category
         .findOne({ name: 'HIPSTER' })
         .exec()
         .then(category => {
@@ -61,24 +100,74 @@ User
 
           return Brand
             .create([{
-              name: 'WATER',
-              mainimage: 'https://scontent-atl3-1.cdninstagram.com/t51.2885-15/s640x640/e35/19379256_1791950654155596_2512029575752450048_n.jpg',
+              name: 'BURGER JOYS',
+              mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/287975/avatar/burger_joys_notjustalabel_299108576.jpg',
               images: [{
-                url: 'https://cdn.shopify.com/s/files/1/1053/9082/products/SHOT_13_1566_grande.jpg?v=1483665081'
+                url: 'https://www.notjustalabel.com/sites/default/files/images/collections/288547/img_2889.jpg?itok=psKDQEuz'
               }, {
-                url: 'https://cdn.shopify.com/s/files/1/1053/9082/products/SHOT_18_1869_d1047012-114f-4b79-8856-682e2f48c7b4_grande.jpg?v=1483660236'
+                url: 'https://www.notjustalabel.com/sites/default/files/images/collections/288547/img_2858.jpg?itok=gBdwTeUb'
               }, {
-                url: 'https://cdn.shopify.com/s/files/1/1053/9082/products/SHOT_11_1392_556313b1-1804-4e9f-9c9c-9774d47c1f1e_grande.jpg?v=1483660864'
+                url: 'https://www.notjustalabel.com/sites/default/files/images/collections/288547/img_2859.jpg?itok=ZAnE4z8V'
               }]
             }, {
-              name: 'LAURS KEMP',
-              mainimage: 'http://cdn.shopify.com/s/files/1/0831/6977/products/LAURS-KEMP--Crop-Boob-Tee2_grande.jpg?v=1466226573',
+              name: 'L\'ATELIER MXG',
+              mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/283821/avatar/latelier_mxg_notjustalabel_811066375.png',
               images: [{
-                url: 'https://static1.squarespace.com/static/57a3ed5e414fb54f51f72109/57a3f9515016e144770437c5/58a5435dbe6594753033107d/1506668079076/arlo7.jpg?format=1000w'
+                url: 'https://www.notjustalabel.com/sites/default/files/images/collections/289661/ateliermxg_cultleaderdenimjacketcrop_copy.jpg?itok=tDvNCcOC'
               }, {
-                url: 'https://static1.squarespace.com/static/57a3ed5e414fb54f51f72109/57a3f9515016e144770437c5/5802a2429f74569f6bce8bdb/1487282764500/Paloma+Jeans+4.JPG?format=1500w'
+                url: 'https://www.notjustalabel.com/sites/default/files/images/collections/289661/ateliermxg_kate_moss_frida_khalo_female.jpg?itok=ZzbHEI8E'
               }, {
-                url: 'https://static1.squarespace.com/static/57a3ed5e414fb54f51f72109/57a3f9515016e144770437c5/58ca0f5786e6c081effc13ba/1489637224560/josie+clem+cover.jpg?format=1000w'
+                url: 'https://www.notjustalabel.com/sites/default/files/images/collections/289661/img_4433_copy.jpg?itok=gnns9U68'
+              }]
+            }, {
+              name: 'NAYF & WAVEY',
+              mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/282103/avatar/nayf_wavey_notjustalabel_254360954.jpg',
+              images: [{
+                url: 'https://www.notjustalabel.com/sites/default/files/images/collections/286167/lcfma17wwjoanafongern201612071376.jpg'
+              }, {
+                url: 'https://www.notjustalabel.com/sites/default/files/images/collections/286167/lcfma17wwjoanafongern201612071378_copy.jpg'
+              }, {
+                url: 'https://www.notjustalabel.com/sites/default/files/images/collections/286167/lcfma17wwjoanafongern201612071382.jpg'
+              }]
+            }]);
+        });
+      Category
+        .findOne({ name: 'BOHEMIAN' })
+        .exec()
+        .then(category => {
+
+          categoryToUpdate = category;
+
+          return Brand
+            .create([{
+              name: 'SOLOLU',
+              mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/290795/avatar/sololu_notjustalabel_684987762.png',
+              images: [{
+                url: 'https://www.notjustalabel.com/sites/default/files/images/collections/290823/jamie-full-size-04.jpg?itok=uZyCBJHC'
+              }, {
+                url: 'https://www.notjustalabel.com/sites/default/files/images/collections/290823/48.shorts.jpg?itok=dIJeikbv'
+              }, {
+                url: 'https://www.notjustalabel.com/sites/default/files/images/collections/290823/73.off-shoulder-dress-bell-sleeves.jpg?itok=B35qyalS'
+              }]
+            }, {
+              name: 'JIRI KALFAR',
+              mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/113563/avatar/jiri_kalfar_notjustalabel_294752685.jpg',
+              images: [{
+                url: 'https://s-media-cache-ak0.pinimg.com/originals/63/96/03/639603a7915e608db56b8ef90e3a4743.jpg'
+              }, {
+                url: 'https://static1.squarespace.com/static/5668498869492e8025177bb2/56aa403aa2bab82578161ca0/57cfeb77e6f2e1554bc26c05/1473244028515/DSC_0572.jpg'
+              }, {
+                url: 'https://vg-images.condecdn.net/image/o4w9Qwp7MWA/crop/405/portrait'
+              }]
+            }, {
+              name: 'SIR.',
+              mainimage: 'https://cdn.shopify.com/s/files/1/0546/6329/collections/SIR_LOGO_grande.jpg?v=1443439291',
+              images: [{
+                url: 'https://www.thecoolhour.com/wp-content/uploads/2016/03/0-sir_03fxx.jpg'
+              }, {
+                url: 'https://www.nicdelmar.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/s/i/sir-the-label-taylor-long-sleeve-top-in-white.jpg'
+              }, {
+                url: 'https://s-media-cache-ak0.pinimg.com/originals/ab/8b/39/ab8b39569bd4976981d704d6ca17af8f.jpg'
               }]
             }]);
         })
