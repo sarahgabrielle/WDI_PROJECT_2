@@ -5,7 +5,7 @@ The second project was to build a full-stack RESTful Express app that uses a Mon
 ## Technical Requirements:
 
 * Have at _least_ 2 models – one representing a user and one that represents the main resource of the app
-* Include relationships - embedded or referenced. 
+* Include relationships - embedded or referenced.
 * App should include authentication - with encrypted passwords & an authorization flow.
 * Have complete RESTful routes for at least one of the resources with all CRUD actions.
 * Must use SCSS
@@ -42,8 +42,8 @@ Users can browse designers/brands by categories and "favourite" a brand - which 
 
 ## Approach taken:
 
-* **Write pseudocode before you write actual code.** 
-* I planned out my application by firstly sketching some wireframes and wrote user stories to define what my users would want to do with the app. I also drew on some inspiration from other applications that I use and like (such as instagram and LIKEtoKNOW.it). I then made a to do list for what needed to get done. 
+* **Write pseudocode before you write actual code.**
+* I planned out my application by firstly sketching some wireframes and wrote user stories to define what my users would want to do with the app. I also drew on some inspiration from other applications that I use and like (such as instagram and LIKEtoKNOW.it). I then made a to do list for what needed to get done.
 
 * I first started with the user authentication and tested this in Insomnia. Once that was working, I moved on to doing all the back-end elements of the application and continued testing my routes and controllers in Insomnia. Once those elements were working, I finally moved on to the front-end and styling using Bootstrap.
 
@@ -56,7 +56,7 @@ Users can browse designers/brands by categories and "favourite" a brand - which 
 * Would like to add automated tests for at least ONE of my RESTful resources.
 
 ## Screenshots of the app:
-![](/Users/Sarah/Desktop/LandingPage.png)
-![](/Users/Sarah/Desktop/HomePage.png)
-![](/Users/Sarah/Desktop/BrandPage.png)
-![](/Users/Sarah/Desktop/ProfilePage.png)
+![](/images/LandingPage.png)
+![](/images/HomePage.png)
+![](/images/BrandPage.png)
+![](/images/ProfilePage.png)
