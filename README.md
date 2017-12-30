@@ -28,6 +28,8 @@ ObsCouture
 The app concept is to give undiscovered designers a platform where they can connect with a global audience and showcase their designs from anywhere in the world at no cost.
 Users can browse designers/brands by categories and "favourite" a brand - which is then stored on the user's profile for future reference.
 
+Link to app: https://enigmatic-reaches-67707.herokuapp.com/
+
 
 ## Technologies used:
 
@@ -42,10 +44,9 @@ Users can browse designers/brands by categories and "favourite" a brand - which 
 
 ## Approach taken:
 
-* **Write pseudocode before you write actual code.**
 * I planned out my application by firstly sketching some wireframes and wrote user stories to define what my users would want to do with the app. I also drew on some inspiration from other applications that I use and like (such as instagram and LIKEtoKNOW.it). I then made a to do list for what needed to get done.
 
-* I first started with the user authentication and tested this in Insomnia. Once that was working, I moved on to doing all the back-end elements of the application and continued testing my routes and controllers in Insomnia. Once those elements were working, I finally moved on to the front-end and styling using Bootstrap.
+* Coding-wise, I first started with the user authentication and tested this in Insomnia. Once that was working, I moved to doing all the back-end elements of the application and continued testing my routes and controllers in Insomnia. Once those elements were working, I finally moved on to the front-end and styling using Bootstrap.
 
 * I pseudo-coded all the basic elements of my application and built from there.![]()
 
