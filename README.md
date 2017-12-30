@@ -56,7 +56,7 @@ Users can browse designers/brands by categories and "favourite" a brand - which 
 * Would like to add automated tests for at least ONE of my RESTful resources.
 
 ## Screenshots of the app:
-![](/images/LandingPage.png)
-![](/images/HomePage.png)
-![](/images/BrandPage.png)
-![](/images/ProfilePage.png)
+![](/src/images/LandingPage.png)
+![](/src/images/HomePage.png)
+![](/src/images/BrandPage.png)
+![](/src/images/ProfilePage.png)
