@@ -28,7 +28,7 @@ ObsCouture
 The app concept is to give undiscovered designers a platform where they can connect with a global audience and showcase their designs from anywhere in the world at no cost.
 Users can browse designers/brands by categories and "favourite" a brand - which is then stored on the user's profile for future reference.
 
-Link to app: https://enigmatic-reaches-67707.herokuapp.com/
+Link to app: https://obscouture.herokuapp.com/
 
 
 ## Technologies used:
