@@ -1,4 +1,5 @@
 const Category = require('../models/category');
+const Brand = require('../models/brand');
 
 function indexRoute(req,res) {
   Category
@@ -15,11 +16,16 @@ function indexRoute(req,res) {
 function showRoute(req, res) {
   Category
     .findById(req.params.id)
-    .populate('brands')
     .exec()
     .then((category) => {
       if(!category) return res.status(404).end('Not Found');
-      res.render('categories/show', {category});
+
+      Brand
+        .find({ category: category.id })
+        .exec()
+        .then(brands => {
+          res.render('categories/show', {category, brands});
+        });
     })
     .catch((err) => {
       res.status(500).end(err);

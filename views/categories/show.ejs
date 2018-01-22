@@ -2,7 +2,7 @@
   <div class="container">
     <h1><%= category.name %></h1>
     <div class="row">
-    <% category.brands.forEach((brand) => { %>
+    <% brands.forEach((brand) => { %>
       <div class="col-sm-12 col-md-6 col-lg-3 text-center">
       <a href="/brands/<%= brand.id %>">
       <h5><%= brand.name %></h5>

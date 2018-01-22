@@ -12,7 +12,7 @@ const Brand = require('../models/brand');
 // Drop the model
 User.collection.drop();
 Category.collection.drop();
-// Brand.collection.drop();
+Brand.collection.drop();
 
 // Create the models
 User
@@ -49,31 +49,22 @@ User
   .then(categories => {
     console.log(`${categories.length} categories were created`);
 
-  // return new Promise((resolve, reject) => {
-  // let categoryToUpdate;
-  // Category
-  //   .findOne({ name: 'CHIC' })
-  //   .exec()
-  //   .then(category => {
-  //
-  //     categoryToUpdate = category;
-
     return Brand
       .create([
         {
           name: 'HAUS VON M',
-          category: categories[0],
+          category: categories[0]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/302703/avatar/haus_von_m_notjustalabel_2136249604.jpg',
           images: [{
-            url: 'https://www.notjustalabel.com/sites/default/files/styles/42_x_72_scale_and_crop/public/images/collections/302709/christianconti_hausvonm4407.jpg?itok=SbYFPuRd'
+            url: 'https://www.notjustalabel.com/sites/default/files/styles/images/collections/302709/christianconti_hausvonm4407.jpg?itok=SbYFPuRd'
           }, {
-            url: 'https://www.notjustalabel.com/sites/default/files/styles/42_x_72_scale_and_crop/public/images/collections/302709/christianconti_hausvonm4502.jpg?itok=A4YcSrgK'
+            url: 'https://www.notjustalabel.com/sites/default/files/styles/images/collections/302709/christianconti_hausvonm4502.jpg?itok=A4YcSrgK'
           }, {
-            url: 'https://www.notjustalabel.com/sites/default/files/styles/42_x_72_scale_and_crop/public/images/collections/302709/christianconti_hausvonm5111.jpg?itok=uZJsW1PO'
+            url: 'https://www.notjustalabel.com/sites/default/files/styles/images/collections/302709/christianconti_hausvonm5111.jpg?itok=uZJsW1PO'
           }]
         }, {
           name: 'MAISON NABOODA',
-          category: categories[0],
+          category: categories[0]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/301939/avatar/maison_nabooda_notjustalabel_9650789.jpg',
           images: [{
             url: 'https://www.notjustalabel.com/sites/default/files/styles/42_x_72_scale_and_crop/public/shaima-394f.jpg?itok=hXS8o0lq'
@@ -84,7 +75,7 @@ User
           }]
         }, {
           name: 'JESSICA SAMBUDIONO',
-          category: categories[0],
+          category: categories[0]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/300355/avatar/jessica_sambudiono_notjustalabel_501674439.jpg',
           images: [{
             url: 'https://www.notjustalabel.com/sites/default/files/styles/42_x_72_scale_and_crop/public/images/collections/300357/img_02251.jpg?itok=x7Q3KADj'
@@ -95,7 +86,7 @@ User
           }]
         },{
           name: 'BURGER JOYS',
-          category: categories[1],
+          category: categories[1]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/287975/avatar/burger_joys_notjustalabel_299108576.jpg',
           images: [{
             url: 'https://www.notjustalabel.com/sites/default/files/images/collections/288547/img_2889.jpg?itok=psKDQEuz'
@@ -106,7 +97,7 @@ User
           }]
         }, {
           name: 'L\'ATELIER MXG',
-          category: categories[1],
+          category: categories[1]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/283821/avatar/latelier_mxg_notjustalabel_811066375.png',
           images: [{
             url: 'https://www.notjustalabel.com/sites/default/files/images/collections/289661/ateliermxg_cultleaderdenimjacketcrop_copy.jpg?itok=tDvNCcOC'
@@ -117,7 +108,7 @@ User
           }]
         }, {
           name: 'NAYF & WAVEY',
-          category: categories[1],
+          category: categories[1]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/282103/avatar/nayf_wavey_notjustalabel_254360954.jpg',
           images: [{
             url: 'https://www.notjustalabel.com/sites/default/files/images/collections/286167/lcfma17wwjoanafongern201612071376.jpg'
@@ -128,7 +119,7 @@ User
           }]
         }, {
           name: 'SOLOLU',
-          category: categories[2],
+          category: categories[2]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/290795/avatar/sololu_notjustalabel_684987762.png',
           images: [{
             url: 'https://www.notjustalabel.com/sites/default/files/images/collections/290823/jamie-full-size-04.jpg?itok=uZyCBJHC'
@@ -139,7 +130,7 @@ User
           }]
         }, {
           name: 'JIRI KALFAR',
-          category: categories[2],
+          category: categories[2]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/113563/avatar/jiri_kalfar_notjustalabel_294752685.jpg',
           images: [{
             url: 'https://s-media-cache-ak0.pinimg.com/originals/63/96/03/639603a7915e608db56b8ef90e3a4743.jpg'
@@ -150,7 +141,7 @@ User
           }]
         }, {
           name: 'SIR.',
-          category: categories[2],
+          category: categories[2]._id,
           mainimage: 'https://cdn.shopify.com/s/files/1/0546/6329/collections/SIR_LOGO_grande.jpg?v=1443439291',
           images: [{
             url: 'https://www.thecoolhour.com/wp-content/uploads/2016/03/0-sir_03fxx.jpg'
@@ -161,7 +152,7 @@ User
           }]
         }, {
           name: 'CHI-KA',
-          category: categories[3],
+          category: categories[3]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/303419/avatar/chi-ka_notjustalabel_958372599.png',
           images: [{
             url: 'https://www.notjustalabel.com/sites/default/files/styles/images/collections/303423/img_9312.jpg?itok=1bK2BqrC'
@@ -172,7 +163,7 @@ User
           }]
         }, {
           name: 'ASHMINDER SIHRA',
-          category: categories[3],
+          category: categories[3]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/302963/avatar/ashminder_sihra_notjustalabel_961293405.jpg',
           images: [{
             url: 'https://www.notjustalabel.com/sites/default/files/styles/images/collections/302971/05980001.jpg?itok=FbzpG-Wj'
@@ -183,7 +174,7 @@ User
           }]
         }, {
           name: 'IRMA SKJöTH',
-          category: categories[3],
+          category: categories[3]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/301901/avatar/irma_skjoth_notjustalabel_1057424104.jpg',
           images: [{
             url: 'https://www.notjustalabel.com/sites/default/files/styles/images/collections/301907/irma_skjoth_jl_005.jpg?itok=QYAJjv_8'
@@ -194,7 +185,7 @@ User
           }]
         }, {
           name: '8IGB',
-          category: categories[4],
+          category: categories[4]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/300469/avatar/8igb_community_clothing_notjustalabel_185000079.jpg',
           images: [{
             url: 'https://www.notjustalabel.com/sites/default/files/styles/images/collections/304051/_mg_8887.jpg?itok=7gqkj-Er'
@@ -205,7 +196,7 @@ User
           }]
         }, {
           name: 'URBAN GILT',
-          category: categories[4],
+          category: categories[4]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/300311/avatar/urban_gilt_notjustalabel_1742903349.png',
           images: [{
             url: 'https://www.notjustalabel.com/sites/default/files/styles/images/collections/300781/maddox_grey_1_mini.jpg?itok=zOdw4_R4'
@@ -216,7 +207,7 @@ User
           }]
         }, {
           name: 'FASE FACTORY',
-          category: categories[4],
+          category: categories[4]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/298403/avatar/fase_factory_notjustalabel_926241543.jpg',
           images: [{
             url: 'https://www.notjustalabel.com/sites/default/files/styles/images/collections/303941/look_1f.jpg?itok=40gMK0sq'
@@ -227,7 +218,7 @@ User
           }]
         }, {
           name: 'SERGIO WONDER',
-          category: categories[5],
+          category: categories[5]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/303819/avatar/sergio_wonder_notjustalabel_1811139987.jpg',
           images: [{
             url: 'https://www.notjustalabel.com/sites/default/files/styles/images/collections/303833/file_000.jpeg?itok=BK8PegNf'
@@ -238,7 +229,7 @@ User
           }]
         }, {
           name: 'SIDIKAI',
-          category: categories[5],
+          category: categories[5]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/300395/avatar/sidikai_notjustalabel_348901210.png',
           images: [{
             url: 'https://www.notjustalabel.com/sites/default/files/styles/images/collections/300403/sidikai_studio_kodahblackblazerethereum.jpg?itok=ddsoMPWZ'
@@ -249,7 +240,7 @@ User
           }]
         }, {
           name: 'KATYA SHVEDOVA',
-          category: categories[5],
+          category: categories[5]._id,
           mainimage: 'https://www.notjustalabel.com/sites/default/files/images/designers/299523/avatar/katya_shvedova_notjustalabel_2129462031.jpg',
           images: [{
             url: 'https://www.notjustalabel.com/sites/default/files/styles/images/collections/299535/z_0e98ce64.jpg?itok=kGKQngex'
@@ -258,11 +249,10 @@ User
           }, {
             url: 'https://www.notjustalabel.com/sites/default/files/styles/images/collections/299535/z_62426359.jpg?itok=DV9ivSVh'
           }]
-        }
-      ])
-      .then(brands => {
-        console.log(`${brands.length} brands were created`);
-      });
+        }]);
+  })
+  .then(brands => {
+    console.log(`${brands.length} brands were created`);
   })
   .catch(err => console.log(err))
   .finally(() => mongoose.connection.close());

@@ -21,7 +21,7 @@ function createRoute(req,res){
       return Brand
         .create(req.body)
         .then((brand) => {
-          brand.categId = category._id;
+          brand.category = category._id;
           brand.save();
           category.brands.push(brand);
           category.save();
