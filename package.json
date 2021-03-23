@@ -20,7 +20,7 @@
     "express-session": "^1.15.6",
     "forever": "^0.15.3",
     "method-override": "^2.3.10",
-    "mongoose": "^4.9.4",
+    "mongoose": "^5.12.2",
     "morgan": "^1.8.1",
     "newrelic": "^4.0.0"
   },
