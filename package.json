@@ -22,7 +22,7 @@
     "method-override": "^2.3.10",
     "mongoose": "^4.9.4",
     "morgan": "^1.8.1",
-    "newrelic": "^4.0.0"
+    "newrelic": "^7.3.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
